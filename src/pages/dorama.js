@@ -3,6 +3,7 @@ import style from '../styles/dorama.module.scss'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from 'next/image';
 
 export default class autoplay extends Component {
     render () {
@@ -39,11 +40,25 @@ export default class autoplay extends Component {
             <div>
                 <h1 className={style.dorama}>〜ドラマ〜</h1>
                 <Slider {...settings}>
-                    {imgsAndCmts.map((item) => (
+                    {imgsAndCmts.map((item, i) => (
+                        //最初の書き方
+                        // <div>
+                        //     <img src = {item.src} alt= "pic" className={style.image} />
+                        //     {item.comment.split('\n').map((line, index) => (
+                        //         <p key={index} {...item} className={index === 0? style.firstLine : index ===1 ? style.secondLine : ''}>{line}</p>
+                        //     ))}
+                        // </div>
                         <div>
-                            <img src = {item.src} alt= "pic" className={style.image} />
+                            <div key={i}>
+                                <Image
+                                    src={"/" + item.src}
+                                    alt="pic"
+                                    width={500}
+                                    height={300}
+                                />
+                            </div>
                             {item.comment.split('\n').map((line, index) => (
-                                <p key={index} className={index === 0? style.firstLine : index ===1 ? style.secondLine : ''}>{line}</p>
+                                <p key={index} {...item} className={index === 0? style.firstLine : index ===1 ? style.secondLine : ''}>{line}</p>
                             ))}
                         </div>
                     ))}
