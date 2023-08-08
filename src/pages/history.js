@@ -12,7 +12,7 @@ export default class autoplay extends Component {
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2001,
-            resuponsive: [
+            responsive: [
                 {
                     breakpoint: 768,
                     settings: {
@@ -47,8 +47,8 @@ export default class autoplay extends Component {
                         //         <p key={index} {...item} className={index === 0? style.firstLine : index ===1 ? style.secondLine : ''}>{line}</p>
                         //     ))}
                         // </div>
-                        <div>
-                            <div key={i}>
+                        <div key={i}>
+                            <div>
                                 <Image src={"/" + item.src} alt="pic" width={500} height={300} />
                             </div>
                             {item.comment.split('\n').map((line, index) => (
