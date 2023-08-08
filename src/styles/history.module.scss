@@ -1,13 +1,19 @@
-.dorama {
+.history {
     font-size: 30px;
-    color: rgb(227, 13, 191);
+    color: rgb(247, 69, 75);
     text-align: center;
     font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
 
+.image {
+    width: 500px;
+    height: 250px;
+    margin: 15px;
+}
+
 .firstLine {
     font-size: 15px;
-    color: rgb(246, 219, 45);
+    color: rgb(93, 91, 245);
     text-align: center;
     font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
@@ -19,3 +25,6 @@
     font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
 }
 
+.body {
+    height: 300px;
+}

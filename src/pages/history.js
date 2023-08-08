@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import style from '../styles/dorama.module.scss'
+import style from '../styles/history.module.scss'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,16 +29,15 @@ export default class autoplay extends Component {
         };
         
         const imgsAndCmts = [
-            {src:"summer.jpeg", comment: "毎週月曜 よる９時\nこの夏、一番の恋の予感" },
-            {src:"changingJobs.jpeg", comment: "毎週月曜 よる１０時" },
-            {src:"dog.jpeg", comment: "毎週火曜 よる９時" },
-            {src:"f1814.jpeg", comment: "毎週月曜 よる９時" },
-            {src:"game.jpeg", comment: "毎週金曜 よる１０時\n前代未聞のﾉﾝｽﾄｯﾌﾟ･ｴﾝﾀｰﾃｲﾒﾝﾄ!" }
+            {src:"IMG_0531_Original.jpg", comment: "...\nwhere is it?" },
+            {src:"IMG_0594_Original.jpg", comment: "Horseshoe Bend" },
+            {src:"IMG_0641_Original.jpg", comment: "Antelope Canyon" },
+            {src:"IMG_0935_Original.jpg", comment: "Grand Canyon" },
         ];
 
         return(
             <div>
-                <h1 className={style.dorama}>〜ドラマ〜</h1>
+                <h1 className={style.history}>〜USA〜</h1>
                 <Slider {...settings}>
                     {imgsAndCmts.map((item, i) => (
                         //最初の書き方
@@ -50,12 +49,7 @@ export default class autoplay extends Component {
                         // </div>
                         <div>
                             <div key={i}>
-                                <Image
-                                    src={"/" + item.src}
-                                    alt="pic"
-                                    width={500}
-                                    height={300}
-                                />
+                                <Image src={"/" + item.src} alt="pic" width={500} height={300} />
                             </div>
                             {item.comment.split('\n').map((line, index) => (
                                 <p key={index} {...item} className={index === 0? style.firstLine : index ===1 ? style.secondLine : ''}>{line}</p>
